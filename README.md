@@ -3,7 +3,7 @@
 This project provides scripts inspired by
     [DeepFaceLab_MacOS]https://github.com/chychkan/DeepFaceLab_MacOS.git [DeepFaceLab_Linux](https://github.com/lbfs/DeepFaceLab_Linux) to setup and run [DeepFaceLab](https://github.com/iperov/DeepFaceLab) on MacOS.
 
-You'll need `brew`, `git`, `ffmpeg` available to be able to execute these scripts. The scripts will create a virtual env sandbox and will install all necessary dependencies there, so your main installation of `python3` will be left intact.
+You'll need `brew`, `git`, `ffmpeg`,`conda` available to be able to execute these scripts. The scripts will create a virtual env sandbox and will install all necessary dependencies there, so your main installation of `python3` will be left intact.
 
 ## NOTE: Apple M1 chip
 
