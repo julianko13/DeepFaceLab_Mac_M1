@@ -8,6 +8,7 @@ if is_arm64; then
         echo "You can install it with 'brew install hdf5'. For more details, see https://formulae.brew.sh/formula/hdf5"
         echo "Once it is installed, run ./scripts/0_setup.sh again"
     exit 1
+    fi
 fi
 
 
@@ -60,7 +61,7 @@ if [[ -z "$(brew ls --versions hdf5)" ]]; then
     echo "ERROR: HDF5 needs to be installed to run DeepFaceLab on M1 chip."
     echo "You can install it with 'brew install hdf5'. For more details, see https://formulae.brew.sh/formula/hdf5"
     echo "Once it is installed, run ./scripts/0_setup.sh again"
-exit 1
+    exit 1
 fi
 conda deactivate
 
