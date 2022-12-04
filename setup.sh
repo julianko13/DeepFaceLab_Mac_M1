@@ -2,11 +2,13 @@
 is_arm64() {
   [ "$(uname -m)" == "arm64" ]
 }
+
+command -v brew >/dev/null 2>&1 || { echo >&2 "Installing Homebrew Now"; \
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";}
+
 if is_arm64; then
     if [[ -z "$(brew ls --versions hdf5)" ]]; then
-        echo "ERROR: HDF5 needs to be installed to run DeepFaceLab on M1 chip."
-        echo "You can install it with 'brew install hdf5'. For more details, see https://formulae.brew.sh/formula/hdf5"
-        echo "Once it is installed, run ./scripts/0_setup.sh again"
+        brew install hdf5@1.12.2
     exit 1
     fi
 fi
