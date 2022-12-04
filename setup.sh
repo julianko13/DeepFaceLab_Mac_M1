@@ -4,7 +4,7 @@ is_arm64() {
 }
 
 command -v brew >/dev/null 2>&1 || { echo >&2 "Installing Homebrew Now"; \
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";}
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";}
 
 if is_arm64; then
     if [[ -z "$(brew ls --versions hdf5)" ]]; then
