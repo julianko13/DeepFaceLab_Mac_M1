@@ -16,7 +16,7 @@ Currently there's limited support for Apple M1 laptops. You can do model trainin
 For **Apple M1** laptops you also need [hdf5](https://formulae.brew.sh/formula/hdf5) lib installed.
 Check if you have it with `brew ls --versions hdf5`. Install it with `brew install hdf5`.
 Current version must match h5py or an error will raise.
-`brew install hdf5@1.12.2`
+`brew install hdf5@1.12`
 
 brew can be install in macOS terminal by this command:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

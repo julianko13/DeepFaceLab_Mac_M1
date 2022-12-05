@@ -2,13 +2,21 @@
 is_arm64() {
   [ "$(uname -m)" == "arm64" ]
 }
-
+# Assume default profile is zsh
 command -v brew >/dev/null 2>&1 || { echo >&2 "Installing Homebrew Now"; \
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";}
 
+if grep -q 'eval "$(/opt/homebrew/bin/brew shellenv)"' $HOME/.zprofile
+then
+    echo '# Set PATH, MANPATH, etc., for Homebrew.' >> $HOME/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
+
 if is_arm64; then
     if [[ -z "$(brew ls --versions hdf5)" ]]; then
-        brew install hdf5@1.12.2
+        brew install hdf5@1.12
     exit 1
     fi
 fi
