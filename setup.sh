@@ -6,14 +6,15 @@ is_arm64() {
 command -v brew >/dev/null 2>&1 || { echo >&2 "Installing Homebrew Now"; \
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; }
 
-if grep -q 'eval "$(/opt/homebrew/bin/brew shellenv)"' $HOME/.zprofile;
+if grep -q 'eval "$(/opt/homebrew/bin/brew shellenv)"' $HOME/.zprofile 2>/dev/null;
 then
     echo "Brew Already set"
 else
     echo '# Set PATH, MANPATH, etc., for Homebrew.' >> $HOME/.zprofile
     echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
-    #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    #manual uninstall with this command if some problems prevents it from installing
+    #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 fi
 
 if is_arm64; then
@@ -46,8 +47,9 @@ if [ -z ${NOT_FIRST_SETUP_RUN} ]; then
     fi
 
     # Initialize conda
-    conda init
-
+    conda init bash
+    conda init zsh
+    
     # Rerun the shell script with a new shell (required to apply conda environment if conda init was run for the first time)
     exec bash -c "NOT_FIRST_SETUP_RUN=1 \"$0\""
 fi
