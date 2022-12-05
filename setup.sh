@@ -61,7 +61,7 @@ conda env create -f environment.yml
 # Activate conda environment
 conda activate deepfacelab
 
-python -m pip install
+python -m pip install -r requirements.txt
 # Remove previous git repository
 rm -rf DeepFaceLab
 
