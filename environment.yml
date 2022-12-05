@@ -1,4 +1,4 @@
-name: deepface_test
+name: deepface
 channels:
   - apple
   - defaults
