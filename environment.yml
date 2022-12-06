@@ -1,4 +1,4 @@
-name: deepface
+name: deepfacelab
 channels:
   - defaults
 dependencies:
