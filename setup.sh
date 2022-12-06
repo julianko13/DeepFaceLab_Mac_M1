@@ -61,7 +61,8 @@ conda env create -f environment.yml
 # Activate conda environment
 conda activate deepfacelab
 
-python -m pip install -r requirements.txt
+# conda should also install pip managed packages
+# python -m pip install -r requirements.txt
 # Remove previous git repository
 rm -rf DeepFaceLab
 
@@ -73,12 +74,6 @@ cd DeepfaceLab
 
 git checkout M1_Mac_Support
 
-if [[ -z "$(brew ls --versions hdf5)" ]]; then
-    echo "ERROR: HDF5 needs to be installed to run DeepFaceLab on M1 chip."
-    echo "You can install it with 'brew install hdf5'. For more details, see https://formulae.brew.sh/formula/hdf5"
-    echo "Once it is installed, run ./scripts/0_setup.sh again"
-    exit 1
-fi
 conda deactivate
 
 
