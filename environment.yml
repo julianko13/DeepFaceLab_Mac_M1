@@ -203,4 +203,4 @@ dependencies:
       - widgetsnbextension==4.0.3
       - wrapt==1.14.1
       - zipp==3.9.0
-prefix: /Users/julianko/miniconda/envs/deepface
+prefix: /Users/julianko/miniconda/envs/deepfacelab
