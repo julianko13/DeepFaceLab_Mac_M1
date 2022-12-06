@@ -61,10 +61,19 @@ conda env create -f environment.yml
 # Activate conda environment
 conda activate deepfacelab
 
-# conda should also install pip managed packages
-# python -m pip install -r requirements.txt
+# OSERROR Errno 2
+#python -m pip install -r requirements.txt
 # Remove previous git repository
-rm -rf DeepFaceLab
+if test -f DeepFaceLab; then
+    read -p "Found DeepFaceLab folder. If you believe it was not successfully cloned, input y to delete it." -n 1 -r
+    if [[! $REPLY =~ ^[Yy]$ ]]
+    then
+        cd DeepfaceLab
+        git checkout M1_Mac_Support
+        exit 1
+    else
+        rm -rf DeepFaceLab
+    fi
 
 # Clone the repo
 git clone https://github.com/julianko13/DeepFaceLab.git DeepFaceLab
