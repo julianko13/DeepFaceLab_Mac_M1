@@ -74,7 +74,7 @@ if test -f DeepFaceLab; then
     else
         rm -rf DeepFaceLab
     fi
-
+fi
 # Clone the repo
 git clone https://github.com/julianko13/DeepFaceLab.git DeepFaceLab
 
