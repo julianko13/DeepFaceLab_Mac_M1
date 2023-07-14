@@ -7,8 +7,8 @@ You'll need `brew`, `git`, `ffmpeg`,`conda` available to be able to execute thes
 
 ## NOTE: Apple M1 chip
 
-Currently there's limited support for Apple M1 laptops. You can do model training, but the XSeg editor currently does not work (the DeepFaceLab codebase is not compatible with PyQt6).
-
+--Currently there's limited support for Apple M1/M2. You can do model training, but the XSeg editor currently does not work (the DeepFaceLab codebase is not compatible with PyQt6). --
+Install PyQT5 from conda should work.
 ## Setup
 
 **Tools**
